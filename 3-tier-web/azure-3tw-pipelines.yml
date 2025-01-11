@@ -26,7 +26,7 @@ stages:
           inputs:
             provider: 'azurerm'
             command: 'init'
-            workingDirectory: '$(System.DefaultWorkingDirectory)/logic-app'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/3-tier-web'
             backendServiceArm: 'devOps-spn-01'
             backendAzureRmResourceGroupName: '$(resource-rg)'
             backendAzureRmStorageAccountName: '$(stant)'
@@ -38,7 +38,7 @@ stages:
           inputs:
             provider: 'azurerm'
             command: 'validate'
-            workingDirectory: '$(System.DefaultWorkingDirectory)/logic-app'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/3-tier-web'
 
   - stage: tfdeploy
     condition: succeeded('tfvalidate')
@@ -56,7 +56,7 @@ stages:
           inputs:
             provider: 'azurerm'
             command: 'init'
-            workingDirectory: '$(System.DefaultWorkingDirectory)/logic-app'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/3-tier-web'
             backendServiceArm: 'devOps-spn-01'
             backendAzureRmResourceGroupName: '$(resource-rg)'
             backendAzureRmStorageAccountName: '$(stant)'
@@ -68,7 +68,7 @@ stages:
           inputs:
             provider: 'azurerm'
             command: 'plan'
-            workingDirectory: '$(System.DefaultWorkingDirectory)/logic-app'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/3-tier-webp'
             environmentServiceNameAzureRM: 'devOps-spn-01'
             commandOptions: '-lock-timeout=300s' # Prevent lock acquisition errors
         
@@ -77,6 +77,6 @@ stages:
           inputs:
             provider: 'azurerm'
             command: 'apply'
-            workingDirectory: '$(System.DefaultWorkingDirectory)/logic-app'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/3-tier-web'
             environmentServiceNameAzureRM: 'devOps-spn-01'
             commandOptions: '-auto-approve -lock-timeout=300s' # Avoid waiting indefinitely for lock
