@@ -3,6 +3,7 @@ variable "log_analytics_workspace_name" {
   type        = string
 }
 
+
 variable "resource_group_name" {
   description = "The name of the resource group"
   type        = string
@@ -14,9 +15,10 @@ variable "location" {
 }
 
 variable "target_resource_id" {
-  description = "The target resource to enable diagnostics for"
+  description = "Map of resource names to their respective resource IDs for diagnostic settings"
   type        = string
 }
+
 
 variable "diagnostic_setting" {
   description = "The name of the diagnostic setting"

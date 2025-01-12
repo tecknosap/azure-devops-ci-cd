@@ -53,4 +53,18 @@ variable "app_service_name" {
 }
 
 
+variable "application_insight_name" {
+    description = "Application insight name"
+    type = string
+      
+}
+
+variable "application_type" {
+    description = "Application isight type"
+    type = string
+    default = "web"
+
+}
+
+
 

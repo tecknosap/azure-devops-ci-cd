@@ -48,4 +48,10 @@ variable "connection_string" {
   })
 }
 
+variable "application_insights_instrumentation_key" {
+  description = "The instrumentation key for Application Insights."
+  type        = string
+}
+
+
 

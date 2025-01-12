@@ -25,9 +25,17 @@ resource "azurerm_app_service" "tnk-app-service" {
     default_documents = ["index.html"]
   }
 
+  # Application Insights Configuration
+  app_settings = {
+    "APPLICATION_INSIGHTS_INSTRUMENTATION_KEY" = var.application_insights_instrumentation_key
+  }
+
+  # SQL Connection string
   connection_string {
     name  = "SQL_CONNECTION_STRING"
     type  = "SQLServer"
     value = "Server=tcp:${var.mssql_server_name};Database=${var.mssql_database_name};User Id=${var.admin_username};Password=${var.admin_password};"
   }
+
+  
 }

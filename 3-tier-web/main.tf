@@ -45,23 +45,38 @@ module "log_analytics" {
   depends_on = [module.sql_database, module.key_vault]
 }
 
+# Application Insights module usage
+module "app_insights" {
+  source                    = "./modules/app-insights"
+  resource_group_name       = azurerm_resource_group.global.name
+  location                  = azurerm_resource_group.global.location
+  application_insight_name  = "${var.application_insight_name}-${random_id.suffix.hex}"
+  application_type          = var.application_type
+  log_analytics_workspace_id = module.log_analytics.out_log_analytics_workspace_id
+  depends_on                = [module.sql_database, module.key_vault] # Ensure ordering
+}
 
-module "as" {
+
+
+module "app_service" {
   source                = "./modules/app-service"
-  resource_group_name = azurerm_resource_group.global.name
-  location            = azurerm_resource_group.global.location
+  resource_group_name   = azurerm_resource_group.global.name
+  location              = azurerm_resource_group.global.location
   app_service_plan_name = "${var.app_service_plan_name}-${random_id.suffix.hex}"
   app_service_name      = "${var.app_service_name}-${random_id.suffix.hex}"
   mssql_server_name     = "${var.sql_server_name}-${random_id.suffix.hex}"
   mssql_database_name   = "${var.sql_database_name}-${random_id.suffix.hex}" 
   admin_username        = var.server_user_name 
   admin_password        = module.sql_database.out_administrator_login_password
-  depends_on = [ module.sql_database, module.key_vault, module.log_analytics ]
 
   connection_string = {
     name  = "SQL_CONNECTION_STRING"
     type  = "SQLServer"
     value = "Server=tcp:${module.sql_database.out_sql_server_name};Database=${module.sql_database.out_database_name};User Id=${module.sql_database.out_administrator_login};Password=${module.sql_database.out_administrator_login_password};"
   }
-}
 
+  # Pass Application Insights Instrumentation Key
+  application_insights_instrumentation_key = module.app_insights.instrumentation_key
+
+  depends_on = [ module.sql_database, module.key_vault, module.log_analytics, module.app_insights ]
+}
