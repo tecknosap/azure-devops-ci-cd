@@ -1,3 +1,6 @@
+# =====================================================
+# Application Insights resource
+# =====================================================
 resource "azurerm_application_insights" "teckno_web_insights" {
   name                    = var.application_insight_name
   application_type         = "web"

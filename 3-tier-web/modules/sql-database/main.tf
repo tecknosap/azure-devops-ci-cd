@@ -1,7 +1,14 @@
+# =====================================================
+# Generate random password for SQL Server
+# =====================================================
 resource "random_password" "password" {
-    length  = 16
-    special = true
+  length  = 16
+  special = true
 }
+
+# =====================================================
+# Create Azure SQL Server
+# =====================================================
 resource "azurerm_mssql_server" "svr_name" {
   name                         = var.sql_server_name
   resource_group_name          = var.resource_group_name
@@ -9,9 +16,11 @@ resource "azurerm_mssql_server" "svr_name" {
   version                      = "12.0"
   administrator_login          = var.admin_username
   administrator_login_password = random_password.password.result
-
 }
 
+# =====================================================
+# Create Azure SQL Database
+# =====================================================
 resource "azurerm_mssql_database" "svr_db_name" {
   name         = var.database_name
   server_id    = azurerm_mssql_server.svr_name.id
@@ -20,6 +29,4 @@ resource "azurerm_mssql_database" "svr_db_name" {
   max_size_gb  = 2
   sku_name     = "S0"
   enclave_type = "VBS"
-
-
 }
