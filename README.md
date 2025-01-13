@@ -1,284 +1,140 @@
-<<<<<<< HEAD
-# **3-Tier Web Application on Azure with Terraform**
+# 3-Tier Web Application on Azure with Terraform
 
-## **Overview**
+## Overview
 
-This project demonstrates a **3-Tier Web Application** deployed on **Microsoft Azure** using **Terraform** for Infrastructure as Code (IaC). The architecture is designed for scalability, security, and high availability, adhering to industry best practices.
+This project demonstrates the deployment of a **3-Tier Web Application** on **Microsoft Azure**, utilizing **Terraform** for automated infrastructure provisioning. The architecture is designed for **scalability**, **security**, and **high availability**.
 
-### **Architecture Layers:**
+### Architecture Overview:
 
-1. **Presentation Tier (Frontend):** A **.NET web application** hosted on **Azure App Service** to serve the user interface.
-2. **Application Tier (Backend):** Implements business logic, interacts with the SQL Database, and manages secure configurations via **Azure Key Vault**.
-3. **Data Tier:** A **SQL Database** hosted in **Azure SQL Database**, providing reliable and scalable data storage.
+1. **Presentation Tier (Frontend)**: A **.NET web application** hosted on **Azure App Service**, serving the user interface.
+2. **Application Tier (Backend)**: A **.NET backend** integrated with **Azure Key Vault** for secure configuration management and business logic.
+3. **Data Tier**: A secure **Azure SQL Database** for data storage and management.
 
-The deployment uses **Terraform** to ensure consistency, repeatability, and ease of management, while **Application Insights** and **Log Analytics** provide monitoring and diagnostics.
-
----
-
-## **Key Features**
-
-- **3-Tier Architecture:** Separation of concerns across presentation, application, and data layers.
-- **Terraform Automation:** Ensures consistent, automated deployment of infrastructure.
-- **Azure App Service:** Managed hosting with scalability for frontend and backend services.
-- **Azure SQL Database:** Secure and scalable relational database for application data.
-- **Azure Key Vault:** Centralized, secure storage for sensitive information like credentials.
-- **Monitoring & Diagnostics:**
-  - **Application Insights:** Real-time application performance monitoring.
-  - **Log Analytics:** Aggregated logs and metrics for troubleshooting.
-- **Role-Based Access Control (RBAC):** Fine-grained access control for secure operations.
+This architecture ensures separation of concerns, high scalability, and secure access management using Azure services and Terraform automation.
 
 ---
 
-## **Tech Stack**
+## Key Features
 
-- **Frontend:** .NET Web Application  
-- **Backend:** .NET Framework  
-- **Database:** Azure SQL Database  
-- **Infrastructure:** Terraform  
-- **Cloud Platform:** Microsoft Azure  
-- **Monitoring & Logging:** Application Insights, Log Analytics  
-
----
-
-## **Technology Used**
-
-### **Programming & Frameworks**
-- **.NET Framework:** For building the frontend and backend application.
-- **Terraform:** Infrastructure as Code for automating resource provisioning.
-
-### **Cloud Services**
-
-- **Azure App Service:** Web hosting for frontend and backend.
-- **Azure SQL Database:** Managed relational database.
-- **Azure Key Vault:** Secure management of sensitive data.
-- **Application Insights:** Performance monitoring and diagnostics.
-- **Log Analytics:** Centralized log aggregation and analysis.
-
-### **DevOps Tools**
-
-- **Git:** Version control for source code management.
-- **Azure CLI:** Command-line tool for managing Azure resources.
-- **GitHub:** Repository for versioning and collaboration.
+- **Terraform Automation**: Automates the entire infrastructure deployment process, ensuring consistent, repeatable, and version-controlled provisioning. This minimizes human errors and allows for efficient management of infrastructure at scale.
+  
+- **Scalable Architecture**: Utilizes **Azure App Service** for hosting the frontend and backend, **Azure SQL Database** for scalable data storage, and **Azure Key Vault** to securely manage application secrets.
+  
+- **Monitoring & Diagnostics**: Integrated with **Application Insights** for real-time application performance monitoring, and **Log Analytics** for centralized logging and troubleshooting, ensuring that issues are quickly identified and resolved.
+  
+- **Role-Based Access Control (RBAC)**: Implements **RBAC** to enforce fine-grained access control, ensuring only authorized users and services can interact with sensitive resources such as databases and configuration secrets.
 
 ---
 
-## **Prerequisites**
+## Business Impact
 
-Before you start, ensure you have the following:
+This solution showcases the ability to deliver a **scalable**, **secure**, and **automated** cloud architecture, using **Terraform** to automate infrastructure management and **Azure services** for cloud-native reliability. The integration of key components like **Application Insights** and **RBAC** offers multiple business benefits:
 
-1. **Azure Subscription:** An active Azure account with permissions to create resources.
-2. **Terraform Installed:** [Download Terraform](https://www.terraform.io/downloads.html).
-3. **Azure CLI Installed:** [Install Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli).
-4. **Git Installed:** [Download Git](https://git-scm.com/).
-5. **SQL Admin Credentials:** SQL Database admin username and password.
-6. **Resource Group:** A pre-existing resource group or specify one to be created during deployment.
+- **Efficiency**: Terraform automates the provisioning and management of cloud infrastructure, reducing the time and complexity of deployments.
+- **Security**: Integration with **Azure Key Vault** and **RBAC** ensures that sensitive information is securely managed and that access is tightly controlled.
+- **Proactive Monitoring**: With **Application Insights** and **Log Analytics**, organizations can monitor the health and performance of applications in real time, proactively identifying issues before they affect end users.
+
+This architecture is an ideal choice for organizations looking to **optimize** their cloud environments, ensuring high availability, security, and scalability for their web applications.
 
 ---
 
-## **Deployment Steps**
+## Solution Architecture Diagram
 
-1. **Clone the Repository**
+The following diagram illustrates the **3-Tier Architecture** of the web application:
+<img src="https://github.com/user-attachments/assets/e0c43834-13df-4339-bebd-1e793a781741" width="600" height="400" />
 
-   ```bash
-   git clone https://github.com/your-username/3-tier-web-app.git  
-   cd 3-tier-web-app 
+#### Deployed Solution
+<img src="https://github.com/user-attachments/assets/0cbf9a04-9784-43b8-91da-dbee7848b822" width="600" height="400" />
 
-Configure Terraform Variables Update the variables.tf file with:
+#### Final Result
+<img src="https://github.com/user-attachments/assets/c11b024f-b8aa-4289-95bc-9286ce58bf7f" width="600" height="400" />
 
-Azure region.
-Resource group name.
-SQL database credentials.
-App Service plan details.
-Application Insights and Key Vault names.
 
-Initialize Terraform Run the following command to initialize Terraform in your project directory:
+
+
+This architecture separates concerns into three distinct layers:
+
+1. **Frontend** (Presentation Tier): A **.NET** web application hosted on **Azure App Service**.
+   
+3. **Backend** (Application Tier): A **.NET backend** integrated with **Azure Key Vault** to manage configuration securely.
+   
+5. **Data** (Data Tier): A **Azure SQL Database** provides scalable and secure data storage.
+   
+7. **Monitoring & Diagnostics**: Real-time monitoring through **Application Insights** and centralized logging with **Log Analytics**.
+
+---
+
+## Tech Stack
+
+- **Frontend**: .NET Web Application
+- **Backend**: .NET Framework
+- **Database**: Azure SQL Database
+- **Infrastructure**: Terraform
+- **Cloud Platform**: Microsoft Azure
+- **Monitoring & Logging**: Application Insights, Log Analytics
+- **CI/CD**: GitHub Actions (optional), Azure DevOps (optional)
+
+---
+
+## Prerequisites
+
+Before deploying the solution, make sure you have the following:
+
+- **Azure Subscription**: A valid Azure account with permissions to create resources.
+- **Terraform**: [Install Terraform](https://www.terraform.io/downloads.html).
+- **Azure CLI**: [Install Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli).
+- **Git**: [Install Git](https://git-scm.com/).
+- **SQL Admin Credentials**: Database admin credentials for configuring Azure SQL Database.
+- **CI/CD Pipeline**: (Optional) GitHub Actions, Azure DevOps for CI/CD pipeline setup.
+
+---
+
+## Deployment Steps
+
+1. **Clone the Repository**:
+
+   git clone https://github.com/your-username/3-tier-web-app.git
+   cd 3-tier-web-app
+
+
+#### Initialize Terraform:
 
 terraform init
 
-Preview the Resources Generate and review the execution plan:
-
-terraform plan  
-
-Deploy the Infrastructure Provision the resources in Azure:
-
-terraform apply  
-
-Verify the Deployment
-
-Access the App Service URL to verify the application is running.
-Check Application Insights for live metrics and performance data.
-Inspect logs in Log Analytics for troubleshooting.
-Architecture Diagram
-Key Components
-Azure App Service: Hosts the frontend and backend web applications.
-Azure SQL Database: Securely stores relational data.
-Azure Key Vault: Centralized management for credentials and secrets.
-Application Insights: Provides performance and usage metrics.
-Log Analytics: Aggregates and visualizes logs for observability.
-Include your architecture diagram image here.
-
-# Conclusion
-This project showcases an industry-standard, 3-Tier Web Application architecture on Microsoft Azure, emphasizing:
-
-Scalability: Leveraging Azure services and Terraform automation.
-Security: Through Azure Key Vault and RBAC.
-Observability: With integrated monitoring and logging tools.
-Using Terraform, the deployment process is fully automated, ensuring repeatability and ease of maintenance. This approach is ideal for modern, cloud-native applications, making it an excellent example of a professional-grade solution.
-
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-#### Contributing
-Contributions are welcome! Follow these steps:
-
-Fork the Repository
-Create a New Branch:
-
-git checkout -b feature-branch  
-Commit Your Changes:
-
-git commit -m 'Add new feature'  
-Push to Your Fork:
-
-git push origin feature-branch  
-Submit a Pull Request
-Your ideas and improvements are greatly appreciated!
-=======
-# **3-Tier Web Application in Azure**
-
-## **Architecture Overview**
-
-This project sets up a **3-Tier Web Application** architecture in **Microsoft Azure** using **Terraform**. The three layers in this architecture are:
-
-1. **Presentation Tier (Frontend)**: A **.NET web application** hosted on **Azure App Service**, serving the front-end to users.
-2. **Application Tier (Backend)**: The .NET application interacts with the **SQL Database** and other business logic. Application configuration and diagnostics are handled by **Azure Application Insights**.
-3. **Data Tier**: A **SQL Database** hosted in **Azure SQL Database**, with sensitive information (such as credentials) stored securely in **Azure Key Vault**.
-
-All components are provisioned and managed using **Terraform** to ensure scalability, repeatability, and ease of maintenance.
-
-## **Key Features**
-
-- **3-Tier Architecture**: Clearly separated presentation, application, and data layers.
-- **Azure App Service**: Hosts the web application in a fully managed environment with built-in scaling capabilities.
-- **Azure SQL Database**: A fully managed relational database for storing application data, with auto-scaling and backup options.
-- **Application Insights**: Provides monitoring and diagnostics, tracking application performance and health in real time.
-- **Azure Key Vault**: Securely stores sensitive information such as SQL Database connection strings and admin credentials.
-- **Log Analytics**: Centralized logging and metrics aggregation for troubleshooting and analysis.
-- **Terraform Automation**: All resources are provisioned and configured using Terraform, enabling automated and consistent deployment.
-
-## **Prerequisites**
-
-Before deploying this solution, ensure you have the following:
-
-- **Azure Subscription**: A valid Azure account with permissions to create resources.
-- **Terraform Installed**: Terraform installed and configured to work with your Azure subscription.
-- **Resource Group**: A resource group that either already exists or will be created during deployment.
-- **Admin Credentials**: SQL Server admin username and password for database configuration.
-- **Azure CLI (Optional)**: Azure CLI can be used for additional manual configurations, if needed.
-
-## **Deployment Steps**
-
-Follow these steps to deploy the solution:
-
-1. **Clone the Repository**: Clone this repository to your local machine.
-   
-2. **Configure Variables**: Update the `variables.tf` file with the required values, including the resource group name, SQL server credentials, Application Insights name, and others.
-
-3. **Initialize Terraform**: Run the following command to initialize the Terraform working directory:
-
-   terraform init
-Preview the Deployment: Run the terraform plan command to preview the resources that will be created:
+#### Preview the Resources:
 
 terraform plan
-Deploy the Resources: Apply the Terraform configuration to provision the infrastructure:
+
+#### Deploy the Infrastructure:
 
 terraform apply
-Monitor the Resources: After deployment, go to the Azure portal to view the App Service, SQL Database, Application Insights, and Key Vault resources.
 
-Access the Application: Once deployed, access the web application hosted on Azure App Service through the provided URL.
+#### Verify the Deployment: 
+Access the App Service URL, check Application Insights for live performance data, and view Log Analytics for logs.
 
-Security Considerations
-Secure Secret Management: All sensitive data, including database credentials, are securely stored in Azure Key Vault and accessed by the application at runtime.
-Role-Based Access Control (RBAC): Key Vault access policies restrict access to secrets to authorized users and services only.
-Data Encryption: Azure SQL Database and Key Vault both support encryption at rest and in transit.
-Purge Protection: Key Vault is configured with purge protection to prevent the accidental deletion of sensitive secrets.
-
-#### Architecture Diagram
-The architecture includes the following components:
-
-Presentation Tier: The web application hosted on Azure App Service which serves the front-end to users. It is linked to Application Insights for monitoring.
-Application Tier: The application tier is represented by the backend application that connects to the SQL Database and utilizes Key Vault for securely managing credentials.
-Data Tier: The Azure SQL Database is the backend storage for application data.
-Monitoring & Logging: Application Insights monitors application performance, while Azure Log Analytics provides aggregated logs and metrics.
-Security: Azure Key Vault stores sensitive credentials, such as SQL Database login information.
-[![image](https://github.com/user-attachments/assets/416d3848-4c92-4042-9c43-6be66bfb5fe7)
-]
-
-
-Deploying the Application to Azure App Service Using Git
-
-#### Set up Git Remote:
-
-git remote add azure https://<username>@<app-service-name>.scm.azurewebsites.net:443/<app-service-name>.git
-
-Initialize Git Repository:
-
-git init
-git add .
-git commit -m "Initial Commit"
-
-Push to Azure App Service:
-
-git push azure master
-
-#### Authenticate:
-
-- Go to the Azure Portal and navigate to your App Service.
-- Under Deployment Center, select Local Git/FTPS credentials.
-- Use the Local Git Username and Password for authentication.
-- 
-#### Verify Deployment:
-
-Open the Console under Development Tools in the Azure portal.
-Type ls to see your files in C:\home\site\wwwroot\.
-
-#### Access the Website:
-
-Your site is live and can be accessed at:
-
-https://<app-service-name>.azurewebsites.net/
-
-<img src="https://github.com/user-attachments/assets/0b8a179b-4197-4af9-82ca-6be50bbfddb0" alt="image" style="width: 500px; height: 300px; margin: 20px;">
-
-
-
-Now you can customize the website from VS Code and push changes to Azure.
-
-# Conclusion
-This project provides an automated, scalable, and secure solution for hosting a 3-Tier Web Application on Microsoft Azure. The separation of concerns across the three tiers (presentation, application, data) enables flexibility and scalability. The use of Terraform ensures that infrastructure is deployed in a repeatable and maintainable way, while Azure Key Vault, SQL Database, Application Insights, and Log Analytics provide essential security and monitoring features.
-
-# License
+### License
 This project is licensed under the MIT License.
 
-# Customization
-You can customize this project by modifying the following:
+### Customization
+You can customize the deployment by modifying the following:
 
-App Service Plan: Modify the App Service Plan to scale the app to different pricing tiers (e.g., Standard, Premium) or operating systems (e.g., Linux, Windows).
-Database Settings: Adjust the SQL Database configuration, including size, performance tier, and backup options.
-Application Insights: Configure Application Insights to monitor specific metrics, or integrate with external monitoring services.
-Key Vault Configuration: Modify the Key Vault access policies to control which users and services can access secrets and keys.
->>>>>>> 4a071abfaeb1678acececd68269c38d9f738f360
+App Service Plan: Adjust the App Service Plan to scale the app to different pricing tiers (e.g., Standard, Premium) or operating systems (e.g., Linux, Windows).
+Database Settings: Modify the SQL Database configuration, including size, performance tier, and backup options.
+Application Insights: Configure Application Insights to monitor specific metrics or integrate with external monitoring services.
+Key Vault Configuration: Modify Key Vault access policies to control which users and services can access secrets and keys.
 
-Feel free to modify the configuration to suit your specific requirements, such as changing the VM size, region, or network configuration.
+### Contributing
+Contributions are welcome! To contribute:
+
+Fork the repository.
+Create a new branch.
+Commit your changes.
+Push your branch to your fork.
+Submit a pull request.
+
+### Conclusion
+This project demonstrates a robust, scalable, and secure cloud architecture using Terraform and Azure services. With automated provisioning, comprehensive monitoring, and secure access management, this solution offers a solid foundation for modern cloud-native applications.
+
+Feel free to explore, modify, and extend this setup to suit your virtual machine and networking needs.
 
 Happy Terraforming! 🚀
-<<<<<<< HEAD
-
-Copy code
-
-
-
-
-
-=======
->>>>>>> 4a071abfaeb1678acececd68269c38d9f738f360
