@@ -41,18 +41,23 @@ This architecture is an ideal choice for organizations looking to **optimize** t
 ## Solution Architecture Diagram
 
 The following diagram illustrates the **3-Tier Architecture** of the web application:
+
 <img src="https://github.com/user-attachments/assets/e0c43834-13df-4339-bebd-1e793a781741" width="600" height="400" />
 
-#### Deployed Solution
-<img src="https://github.com/user-attachments/assets/0cbf9a04-9784-43b8-91da-dbee7848b822" width="600" height="400" />
-
 #### Ci/CD Azure DevOps Deployment
+
 <img src="https://github.com/user-attachments/assets/5f1fa1d0-fcea-4fa8-9f88-248d69d148b5" width="600" height="400" />
 
+#### Deployed Solution
+
+<img src="https://github.com/user-attachments/assets/0cbf9a04-9784-43b8-91da-dbee7848b822" width="600" height="400" />
+
 #### Final Result
+
 <img src="https://github.com/user-attachments/assets/c11b024f-b8aa-4289-95bc-9286ce58bf7f" width="600" height="400" />
 
 
+---
 This architecture separates concerns into three distinct layers:
 
 1. **Frontend** (Presentation Tier): A **.NET** web application hosted on **Azure App Service**.
