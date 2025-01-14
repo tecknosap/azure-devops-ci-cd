@@ -22,7 +22,7 @@ This architecture ensures separation of concerns, high scalability, and secure a
   
 - **Monitoring & Diagnostics**: Integrated with **Application Insights** for real-time application performance monitoring, and **Log Analytics** for centralized logging and troubleshooting, ensuring that issues are quickly identified and resolved.
   
-- **Role-Based Access Control (RBAC)**: Implements **RBAC** to enforce fine-grained access control, ensuring only authorized users and services can interact with sensitive resources such as databases and configuration secrets.
+- **Access Policy**: Defines specific permissions to enforce fine-grained access control, ensuring that only authorized users and services can access sensitive resources, such as databases and configuration secrets.
 
 ---
 
@@ -31,7 +31,7 @@ This architecture ensures separation of concerns, high scalability, and secure a
 This solution showcases the ability to deliver a **scalable**, **secure**, and **automated** cloud architecture, using **Terraform** to automate infrastructure management and **Azure services** for cloud-native reliability. The integration of key components like **Application Insights** and **RBAC** offers multiple business benefits:
 
 - **Efficiency**: Terraform automates the provisioning and management of cloud infrastructure, reducing the time and complexity of deployments.
-- **Security**: Integration with **Azure Key Vault** and **RBAC** ensures that sensitive information is securely managed and that access is tightly controlled.
+- **Security**: Integration with **Azure Key Vault** and **ACCESS POLICY** ensures that sensitive information is securely managed and that access is tightly controlled.
 - **Proactive Monitoring**: With **Application Insights** and **Log Analytics**, organizations can monitor the health and performance of applications in real time, proactively identifying issues before they affect end users.
 
 This architecture is an ideal choice for organizations looking to **optimize** their cloud environments, ensuring high availability, security, and scalability for their web applications.
