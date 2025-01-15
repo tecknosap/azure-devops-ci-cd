@@ -27,7 +27,7 @@ stages:
             provider: 'azurerm'
             command: 'init'
             workingDirectory: '$(System.DefaultWorkingDirectory)/3-tier-web'
-            backendServiceArm: 'devOps-spn-01'
+            backendServiceArm: 'Azure-DevOps-SP'
             backendAzureRmResourceGroupName: '$(resource-rg)'
             backendAzureRmStorageAccountName: '$(stant)'
             backendAzureRmContainerName: '$(container)'
@@ -57,7 +57,7 @@ stages:
             provider: 'azurerm'
             command: 'init'
             workingDirectory: '$(System.DefaultWorkingDirectory)/3-tier-web'
-            backendServiceArm: 'devOps-spn-01'
+            backendServiceArm: 'Azure-DevOps-SP'
             backendAzureRmResourceGroupName: '$(resource-rg)'
             backendAzureRmStorageAccountName: '$(stant)'
             backendAzureRmContainerName: '$(container)'
@@ -68,8 +68,8 @@ stages:
           inputs:
             provider: 'azurerm'
             command: 'plan'
-            workingDirectory: '$(System.DefaultWorkingDirectory)/3-tier-webp'
-            environmentServiceNameAzureRM: 'devOps-spn-01'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/3-tier-web'
+            environmentServiceNameAzureRM: 'Azure-DevOps-SP'
             commandOptions: '-lock-timeout=300s' # Prevent lock acquisition errors
         
         - task: TerraformTaskV4@4
@@ -78,5 +78,5 @@ stages:
             provider: 'azurerm'
             command: 'apply'
             workingDirectory: '$(System.DefaultWorkingDirectory)/3-tier-web'
-            environmentServiceNameAzureRM: 'devOps-spn-01'
+            environmentServiceNameAzureRM: 'Azure-DevOps-SP'
             commandOptions: '-auto-approve -lock-timeout=300s' # Avoid waiting indefinitely for lock
