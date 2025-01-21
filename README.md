@@ -40,7 +40,6 @@ This architecture is an ideal choice for organizations looking to **optimize** t
 
 ## Solution Architecture Diagram
 
-<<<<<<< HEAD
 ![Architecture Diagram](https://github.com/user-attachments/assets/e0c43834-13df-4339-bebd-1e793a781741)
 
 #### CI/CD Azure DevOps Deployment
@@ -114,12 +113,14 @@ Deploy the Infrastructure:
 
 terraform apply
 
-Verify the Deployment:
+### Verify the Deployment:
+
 Access the App Service URL.
 Check Application Insights for live performance data.
 View Log Analytics for logs.
 
-### Contributing
+#### Contributing
+
 I welcome fellow Terraform enthusiasts and contributors to help further develop and enhance this project. Contributions can include, but are not limited to:
 
 Scalability Enhancements: Help improve the scalability of the architecture by adding features such as auto-scaling, load balancing, or optimizing resource allocation.
@@ -135,86 +136,6 @@ Push your branch to your fork.
 Submit a pull request.
 By contributing to this project, you help make the architecture more robust, scalable, and future-proof. Let’s build a better cloud-native solution together!
 
-=======
-The following diagram illustrates the **3-Tier Architecture** of the web application:
-
-<img src="https://github.com/user-attachments/assets/e0c43834-13df-4339-bebd-1e793a781741" width="600" height="400" />
-
-#### Ci/CD Azure DevOps Deployment
-
-<img src="https://github.com/user-attachments/assets/5f1fa1d0-fcea-4fa8-9f88-248d69d148b5" width="600" height="400" />
-
-#### Deployed Solution
-
-<img src="https://github.com/user-attachments/assets/0cbf9a04-9784-43b8-91da-dbee7848b822" width="600" height="400" />
-
-#### Final Result
-
-<img src="https://github.com/user-attachments/assets/c11b024f-b8aa-4289-95bc-9286ce58bf7f" width="600" height="400" />
-
-
----
-This architecture separates concerns into three distinct layers:
-
-1. **Frontend** (Presentation Tier): A **.NET** web application hosted on **Azure App Service**.
-   
-3. **Backend** (Application Tier): A **.NET backend** integrated with **Azure Key Vault** to manage configuration securely.
-   
-5. **Data** (Data Tier): A **Azure SQL Database** provides scalable and secure data storage.
-   
-7. **Monitoring & Diagnostics**: Real-time monitoring through **Application Insights** and centralized logging with **Log Analytics**.
-
----
-
-## Tech Stack
-
-- **Frontend**: .NET Web Application
-- **Backend**: .NET Framework
-- **Database**: Azure SQL Database
-- **Infrastructure**: Terraform
-- **Cloud Platform**: Microsoft Azure
-- **Monitoring & Logging**: Application Insights, Log Analytics
-- **CI/CD**: GitHub Actions (optional), Azure DevOps (optional)
-
----
-
-## Prerequisites
-
-Before deploying the solution, make sure you have the following:
-
-- **Azure Subscription**: A valid Azure account with permissions to create resources.
-- **Terraform**: [Install Terraform](https://www.terraform.io/downloads.html).
-- **Azure CLI**: [Install Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli).
-- **Git**: [Install Git](https://git-scm.com/).
-- **SQL Admin Credentials**: Database admin credentials for configuring Azure SQL Database.
-- **CI/CD Pipeline**: (Optional) GitHub Actions, Azure DevOps for CI/CD pipeline setup.
-
----
-
-## Deployment Steps
-
-1. **Clone the Repository**:
-
-   git clone https://github.com/your-username/3-tier-web-app.git
-   cd 3-tier-web-app
-
-
-#### Initialize Terraform:
-
-terraform init
-
-#### Preview the Resources:
-
-terraform plan
-
-#### Deploy the Infrastructure:
-
-terraform apply
-
-#### Verify the Deployment: 
-Access the App Service URL, check Application Insights for live performance data, and view Log Analytics for logs.
-
->>>>>>> 31907a465a920e363fa8e021ed8fe3defb62594b
 ### License
 This project is licensed under the MIT License.
 
@@ -225,28 +146,9 @@ App Service Plan: Adjust the App Service Plan to scale the app to different pric
 Database Settings: Modify the SQL Database configuration, including size, performance tier, and backup options.
 Application Insights: Configure Application Insights to monitor specific metrics or integrate with external monitoring services.
 Key Vault Configuration: Modify Key Vault access policies to control which users and services can access secrets and keys.
-
-<<<<<<< HEAD
-###Conclusion
-=======
-### Contributing
-Contributions are welcome! To contribute:
-
-Fork the repository.
-Create a new branch.
-Commit your changes.
-Push your branch to your fork.
-Submit a pull request.
-
 ### Conclusion
->>>>>>> 31907a465a920e363fa8e021ed8fe3defb62594b
 This project demonstrates a robust, scalable, and secure cloud architecture using Terraform and Azure services. With automated provisioning, comprehensive monitoring, and secure access management, this solution offers a solid foundation for modern cloud-native applications.
 
 Feel free to explore, modify, and extend this setup to suit your virtual machine and networking needs.
 
 Happy Terraforming! 🚀
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 31907a465a920e363fa8e021ed8fe3defb62594b
