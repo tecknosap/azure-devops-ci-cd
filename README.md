@@ -42,28 +42,28 @@ This architecture is an ideal choice for organizations looking to **optimize** t
 This section displays the architecture of the solution, giving an overview of the system's components and their interactions.
 
 <div style="margin-bottom: 20px;">
-    <img src="https://github.com/user-attachments/assets/e0c43834-13df-4339-bebd-1e793a781741" alt="Architecture Diagram" width="600" height="400" />
+    <img src="https://github.com/user-attachments/assets/e0c43834-13df-4339-bebd-1e793a781741" alt="Architecture Diagram" width="600" height="300" />
 </div>
 
 #### CI/CD Azure DevOps Deployment
 This section showcases the CI/CD pipeline in Azure DevOps, which automates the build, test, and deployment processes.
 
 <div style="margin-bottom: 20px;">
-    <img src="https://github.com/user-attachments/assets/5f1fa1d0-fcea-4fa8-9f88-248d69d148b5" alt="CI/CD Azure DevOps Deployment" width="600" height="400" />
+    <img src="https://github.com/user-attachments/assets/5f1fa1d0-fcea-4fa8-9f88-248d69d148b5" alt="CI/CD Azure DevOps Deployment" width="600" height="300" />
 </div>
 
 #### Deployed Solution
 This section presents a visual representation of the solution in its deployed state, emphasizing how components are configured and interact in a live environment.
 
 <div style="margin-bottom: 20px;">
-    <img src="https://github.com/user-attachments/assets/0cbf9a04-9784-43b8-91da-dbee7848b822" alt="Deployed Solution" width="600" height="400" />
+    <img src="https://github.com/user-attachments/assets/0cbf9a04-9784-43b8-91da-dbee7848b822" alt="Deployed Solution" width="600" height="300" />
 </div>
 
 #### Final Result
 This section shows the custom landing page displayed after successfully deploying the 3-tier web application, confirming the solution's functionality and completion.
 
 <div style="margin-bottom: 20px;">
-    <img src="https://github.com/user-attachments/assets/c11b024f-b8aa-4289-95bc-9286ce58bf7f" alt="Final Result" width="600" height="400" />
+    <img src="https://github.com/user-attachments/assets/c11b024f-b8aa-4289-95bc-9286ce58bf7f" alt="Final Result" width="600" height="300" />
 </div>
 
 ---
